@@ -9,21 +9,33 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+          tp: tap_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+          }; 
+        };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // |  TAB |  Q  |  W  |  E  |  R   |  T  |   |  Y      |  U   |  I  |  O  |  P  | BKSP |
+            // | CTRL |  A  |  S  |  D  |  F   |  G  |   |  H      |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V   |  B  |   |  N      |  M   |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | BKSP | LWR |   | ALT/ENT | SPC  | RSE |
 
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R          &kp T    &kp Y    &kp U      &kp I      &kp O    &kp P     &kp ESCAPE
 &kp LCTRL  &kp A  &kp S  &kp D     &kp F          &kp G    &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C     &kp V          &kp B    &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &trans
-                         &kp LGUI  &kp BACKSPACE  &mo 1    &kp RET  &kp SPACE  &mo 2
+                         &kp LGUI  &kp BACKSPACE  &mo 1    &tp LALT RET  &kp SPACE  &mo 2
             >;
         };
 
@@ -32,13 +44,13 @@
             // |  TAB |  1  |  2  |  3  |     |     |   | LALT+LEFT | LALT+DWN  | LALT+UP   | LALT+RGT  |     | BKSP |
             // | CTRL |  4  | 5   |  6  |     |     |   | LFT       | DWN       |  UP       | RGT       |     |      |
             // | SHFT |  7  | 8   |  9  |  0  |     |   | LGUI+LEFT | LGUI+DWN  | LGUI+UP   | LGUI+RGT  |
-            //                    | GUI |     | SPC |   | ENT       |     | ALT |
+            //                    | GUI | BKSP | LWR |   | ALT/ENT | SPC  | RSE |
 
             bindings = <
 &kp TAB    &kp N1  &kp N2  &kp N3    &trans  &trans       &kp LA(LEFT)  &kp LA(DOWN)  &kp LA(UP)  &kp LA(RIGHT)  &trans  &kp BSPC
 &kp LCTRL  &kp N4  &kp N5  &kp N6    &trans  &trans       &kp LEFT      &kp DOWN      &kp UP      &kp RIGHT      &trans  &trans
 &kp LSHFT  &kp N7  &kp N8  &kp N9    &kp N0  &trans       &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
-                           &kp LGUI  &trans  &kp SPACE    &kp RET       &trans        &kp RALT
+                           &kp LGUI  &kp BACKSPACE  &trans       &tp LALT RET       &kp SPACE        &trans
             >;
         };
 
@@ -47,13 +59,13 @@
             // |  TAB   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | BT_CLR |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
             // | SHFT   | BT1 | BT2 | BT3 | BT4 | BT5 |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            //                    | GUI | BKSP | LWR |   | ALT/ENT | SPC  | RSE |
 
             bindings = <
 &kp TAB     &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &bt BT_CLR  &trans        &trans        &trans        &trans        &trans          &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET    &trans     &kp RALT
+                           &kp LGUI  &kp BACKSPACE  &trans       &tp LALT RET       &kp SPACE        &trans
             >;
         };
     };
