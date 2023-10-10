@@ -33,6 +33,11 @@
 
 #define O_TOG OUT_TOG
 
+/*
+    Bindings taken from
+    https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
+*/
+
 &kscan0 {
     debounce-period = <10>;
 };
