@@ -39,7 +39,7 @@
     https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
 */
 
-// TODO: need to map FN keys
+/* TODO: need to map FN keys */
 
 &kscan0 {
     debounce-period = <10>;
