@@ -35,8 +35,8 @@
 #define O_TOG OUT_TOG
 
 /*
-    Bindings taken from
-    https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
+ *  Bindings taken from
+ *  https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
 */
 
 /* TODO: need to map FN keys */
