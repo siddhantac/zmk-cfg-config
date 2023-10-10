@@ -13,6 +13,7 @@
 #define RAISE 2
 #define ADJUST 3
 #define LOCK 4
+#define LOCK_TOG 5
 
 #define BACK C_AC_BACK
 #define FWD C_AC_FORWARD
@@ -44,6 +45,11 @@
         tri_layer {
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
+        };
+
+        lock_tog {
+            if-layers = <LOWER RAISE>;
+            then-layer = <LOCK_TOG>;
         };
     };
 
@@ -79,26 +85,43 @@
 
         adjust_layer {
             bindings = <
-                &trans     &trans     &kp C_PP   &kp VOL_UP &kp C_STOP &trans                           &bt BT_CLR &reset     &trans     &trans     &trans     &tog LOCK
+                &trans     &trans     &kp C_PP   &kp VOL_UP &kp C_STOP &trans                           &bt BT_CLR &reset     &trans     &trans     &trans     &trans
                 &trans     &trans     &kp C_PREV &kp VOL_DN &kp C_NEXT &trans                           &bt BT0    &bt BT1    &bt BT2    &bt BT3    &bt BT4    &trans
                 &trans     &trans     &trans     &kp C_MUTE &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
                                                             &trans     &trans     &trans     &out O_TOG &trans     &trans
             >;
         };
 
-        // The Lower+Raise+Backspace binding toggles a "soft lock" mode that effective disables
-        // other keys, allowing the keyboard to be transported without spurious key presses. (Note
-        // that the Lower, Raise, and Backspace positions must be bound to &trans to allow the lock
-        // layer to be toggled again after it's activated.)
+        // "Soft lock" layer that shadows all other layers except the LOCK_TOG layer, effectively
+        // disabling all keys other than the lock/unlock sequence (Lower+Raise+Backspace) when the
+        // LOCK layer is active. This allows the keyboard to be transported without accidentally
+        // sending key events to connected hosts.
         //
-        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, this layer can be
-        // replaced by a native behavior in the future.
+        // Since we depend on conditional layers for the lock/unlock binding, the LOWER and RAISE
+        // positions must be bound to &trans rather than &none so their respective layers can still
+        // be activated even when the LOCK layer is enabled.
+        //
+        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented, the next two layers can
+        // be replaced by a native behavior in the future.
         lock_layer {
             bindings = <
-                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &trans
+                &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                 &none      &none      &none      &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                                             &none      &trans     &none      &none      &trans     &none
+            >;
+        };
+
+        // The Lower+Raise+Backspace binding toggles the lock layer. Both the ADJUST and LOCK_TOG
+        // layers are active iff LOWER and RAISE are pressed, but since the LOCK_TOG layer is the
+        // highest-numbered layer, it can always be accessed, even if the LOCK layer is enabled (and
+        // hence thus the ADJUST layer bindings are not accessible).
+        lock_tog_layer {
+            bindings = <
+                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &tog LOCK
+                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
+                &trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &trans     &trans
+                                                            &trans     &trans     &trans     &trans     &trans     &trans
             >;
         };
     };
