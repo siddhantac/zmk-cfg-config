@@ -41,7 +41,28 @@
     debounce-period = <10>;
 };
 
+&mt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+};
+
 / {
+    behaviors {
+
+        /*
+        * td_lock groups locking functions into one key:
+        *  - tap once to lock the host
+        *  - tap twice to put the host to sleep
+        */
+        td_lock: tap_dance_lock {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TAP_DANCE_LOCK";
+          #binding-cells = <0>;
+          tapping-term-ms = <TAPPING_TERM>;
+          bindings = <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
+        };
+      };
+
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -49,11 +70,6 @@
             if-layers = <LOWER RAISE>;
             then-layer = <ADJUST>;
         };
-    };
-
-    &mt {
-        tapping-term-ms = <TAPPING_TERM>;
-        flavor = "tap-preferred";
     };
 
     keymap {
@@ -90,7 +106,7 @@
             bindings = <
                 &trans  &trans  &kp C_PP    &kp VOL_UP  &kp C_STOP  &trans    &bt BT_CLR  &sys_reset  &trans   &trans   &trans   &trans
                 &trans  &trans  &kp C_PREV  &kp VOL_DN  &kp C_NEXT  &trans    &bt BT0     &bt BT1     &bt BT2  &bt BT3  &bt BT4  &trans
-                &trans  &trans  &trans      &kp C_MUTE  &trans      &trans    &trans      &trans      &trans   &trans   &trans   &trans
+                &trans  &trans  &trans      &kp C_MUTE  &trans      &trans    &trans      &trans      &trans   &trans   &trans   &td_lock
                                             &trans      &trans      &trans    &trans      &trans      &trans
                             >;
         };
