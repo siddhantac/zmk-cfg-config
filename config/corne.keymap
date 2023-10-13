@@ -11,24 +11,29 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+
 #define BACK C_AC_BACK
 #define FWD C_AC_FORWARD
 #define PAUSE PAUSE_BREAK
 #define VOL_DN C_VOL_DN
 #define VOL_UP C_VOL_UP
+
 #define ZM_IN LC(EQUAL)
 #define ZM_OUT LC(MINUS)
 #define ZM_RST LC(N0)
+
 #define BT0 BT_SEL 0
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
-#define O_TOG OUT_TOG
+
+#define HYP LS(LC(LA(LGUI)))
 
 /*
  *  Bindings taken from
- *  https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
+ *   https://github.com/bcat/zmk-config/blob/master/config/corne.keymap
+ *   https://github.com/rastasheep/zmk-config/blob/master/config/corne.keymap
 */
 /* TODO: need to map FN keys */
 
@@ -46,15 +51,20 @@
         };
     };
 
+    &mt {
+        tapping-term-ms = <TAPPING_TERM>;
+        flavor = "tap-preferred";
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp TAB    &kp Q  &kp W  &kp E         &kp R      &kp T        &kp Y    &kp U      &kp I      &kp O    &kp P     &kp BSPC
-                &kp LCTRL  &kp A  &kp S  &kp D         &kp F      &kp G        &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-                &kp LSHFT  &kp Z  &kp X  &kp C         &kp V      &kp B        &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                         &kp LEFT_GUI  &kp SPACE  &mo LOWER    &kp RET  &mo RAISE  &kp LALT
+                &mt LALT TAB   &kp Q  &kp W  &kp E     &kp R      &kp T             &kp Y    &kp U      &kp I      &kp O    &kp P     &kp MINUS
+                &mt LCTL ESC   &kp A  &kp S  &kp D     &kp F      &kp G             &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+                &kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B             &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                                             &kp LGUI  &mo LOWER  &mt HYP SPACE     &kp RET  &mo RAISE  &kp BSPC
                             >;
         };
 
