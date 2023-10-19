@@ -9,27 +9,22 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define TAPPING_TERM 200
-
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
-
 #define BACK C_AC_BACK
 #define FWD C_AC_FORWARD
 #define PAUSE PAUSE_BREAK
 #define VOL_DN C_VOL_DN
 #define VOL_UP C_VOL_UP
-
 #define ZM_IN LC(EQUAL)
 #define ZM_OUT LC(MINUS)
 #define ZM_RST LC(N0)
-
 #define BT0 BT_SEL 0
 #define BT1 BT_SEL 1
 #define BT2 BT_SEL 2
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
-
 #define HYP LS(LC(LA(LGUI)))
 
 /*
@@ -50,20 +45,20 @@
 
 / {
     behaviors {
-
         /*
         * td_lock groups locking functions into one key:
         *  - tap once to lock the host
         *  - tap twice to put the host to sleep
         */
+
         td_lock: tap_dance_lock {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TAP_DANCE_LOCK";
-          #binding-cells = <0>;
-          tapping-term-ms = <TAPPING_TERM>;
-          bindings = <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_LOCK";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAPPING_TERM>;
+            bindings = <&kp LG(LC(Q))>, <&kp LG(LA(C_EJECT))>;
         };
-      };
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -79,38 +74,38 @@
 
         default_layer {
             bindings = <
-                &mt LALT TAB   &kp Q  &kp W  &kp E     &kp R      &kp T             &kp Y    &kp U      &kp I      &kp O    &kp P     &kp MINUS
-                &mt LCTL ESC   &kp A  &kp S  &kp D     &kp F      &kp G             &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-                &kp LSHFT      &kp Z  &kp X  &kp C     &kp V      &kp B             &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                             &kp LGUI  &mo LOWER  &mt HYP SPACE     &kp RET  &mo RAISE  &kp BSPC
-                            >;
+&mt LALT TAB  &kp Q  &kp W  &kp E     &kp R      &kp T            &kp Y    &kp U      &kp I      &kp O    &kp P     &kp MINUS
+&mt LCTL ESC  &kp A  &kp S  &kp D     &kp F      &kp G            &kp H    &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT     &kp Z  &kp X  &kp C     &kp V      &kp B            &kp N    &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                            &kp LGUI  &mo LOWER  &mt HYP SPACE    &kp RET  &mo RAISE  &kp BSPC
+            >;
         };
 
         lower_layer {
             bindings = <
-                &trans  &kp EXCL    &kp AT      &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET      &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-                &trans  &kp ZM_RST  &kp ZM_OUT  &kp ZM_IN  &trans    &trans       &kp PIPE       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp TILDE
-                &trans  &kp K_APP   &trans      &trans     &trans    &kp LGUI     &kp BSLH       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp GRAVE
-                                                &trans     &trans    &trans       &kp LG(SPACE)  &trans     &trans
-                            >;
+&trans  &kp EXCL    &kp AT     &kp HASH              &kp DLLR               &kp PRCNT    &kp GRAVE      &trans     &trans     &kp LPAR  &kp RPAR  &trans
+&trans  &kp DOLLAR  &kp PRCNT  &kp CARET             &trans                 &trans       &kp PIPE       &kp UNDER  &kp PLUS   &kp LBRC  &kp RBRC  &kp TILDE
+&trans  &kp AMPS    &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &kp BSLH       &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &trans
+                               &trans                &trans                 &trans       &kp LG(SPACE)  &trans     &trans
+            >;
         };
 
         raise_layer {
             bindings = <
-                &kp CLCK  &kp N1  &kp N2  &kp N3  &trans  &trans    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &trans  &trans
-                &trans    &kp N4  &kp N5  &kp N6  &trans  &trans    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &trans  &kp DEL
-                &trans    &kp N7  &kp N8  &kp N9  &kp N0  &trans    &kp LA(LEFT)  &trans     &trans     &kp LA(RIGHT)  &trans  &kp INS
-                                          &trans  &trans  &trans    &trans        &trans     &trans
-                            >;
+&kp CLCK  &kp N1  &kp N2  &kp N3  &trans  &trans    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &trans  &trans
+&trans    &kp N4  &kp N5  &kp N6  &trans  &trans    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &trans  &trans
+&trans    &kp N7  &kp N8  &kp N9  &kp N0  &trans    &kp LA(LEFT)  &trans     &trans     &kp LA(RIGHT)  &trans  &kp INS
+                          &trans  &trans  &trans    &trans        &trans     &trans
+            >;
         };
 
         adjust_layer {
             bindings = <
-                &trans  &trans  &kp C_PP    &kp VOL_UP  &kp C_STOP  &trans    &bt BT_CLR  &sys_reset  &trans   &trans   &trans   &trans
-                &trans  &trans  &kp C_PREV  &kp VOL_DN  &kp C_NEXT  &trans    &bt BT0     &bt BT1     &bt BT2  &bt BT3  &bt BT4  &trans
-                &trans  &trans  &trans      &kp C_MUTE  &trans      &trans    &trans      &trans      &trans   &trans   &trans   &td_lock
-                                            &trans      &trans      &trans    &trans      &trans      &trans
-                            >;
+&trans  &trans  &kp C_PP    &kp VOL_UP  &kp C_STOP  &trans    &bt BT_CLR  &sys_reset  &trans   &trans   &trans   &trans
+&trans  &trans  &kp C_PREV  &kp VOL_DN  &kp C_NEXT  &trans    &bt BT0     &bt BT1     &bt BT2  &bt BT3  &bt BT4  &trans
+&trans  &trans  &trans      &kp C_MUTE  &trans      &trans    &trans      &trans      &trans   &trans   &trans   &td_lock
+                            &trans      &trans      &trans    &trans      &trans      &trans
+            >;
         };
     };
 };
