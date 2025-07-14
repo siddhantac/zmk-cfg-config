@@ -91,8 +91,8 @@
 
         raise_layer {
             bindings = <
-&trans        &trans  &trans        &kp N7        &kp N8        &kp NUMBER_9    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &mmv MOVE_UP    &mmv MOVE_DOWN
-&kp CAPSLOCK  &trans  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &mmv MOVE_LEFT  &mmv MOVE_DOWN
+&kp CAPSLOCK  &trans  &trans        &kp N7        &kp N8        &kp NUMBER_9    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &mmv MOVE_UP    &mmv MOVE_DOWN
+&kp LCTRL     &trans  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &mmv MOVE_LEFT  &mmv MOVE_DOWN
 &trans        &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp LA(LEFT)  &trans     &trans     &kp LA(RIGHT)  &mkp LCLK       &mkp RCLK
                                     &trans        &trans        &trans          &trans        &trans     &trans
             >;
