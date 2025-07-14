@@ -83,7 +83,7 @@
             bindings = <
 &trans       &kp EXCL    &kp AT     &kp HASH              &kp DLLR               &kp PRCNT    &kp GRAVE      &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
 &kp LC(TAB)  &kp DOLLAR  &kp PRCNT  &kp CARET             &kp PLUS               &kp EQUAL    &kp PIPE       &kp UNDER  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &kp TILDE
-&trans       &kp AMPS    &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &kp BSLH       &kp MINUS  &kp LEFT_BRACKET      &kp LBKT               &trans  &trans
+&trans       &kp AMPS    &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &kp BSLH       &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
                                     &trans                &trans                 &trans       &kp LG(SPACE)  &trans     &trans
             >;
         };
