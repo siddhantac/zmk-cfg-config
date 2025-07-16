@@ -82,19 +82,19 @@
 
         lower_layer {
             bindings = <
-&kp TILDE    &kp EXCL    &kp AT     &kp HASH              &kp DLLR               &kp PRCNT    &kp GRAVE      &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&kp LC(TAB)  &kp DOLLAR  &kp PRCNT  &kp CARET             &kp PLUS               &kp EQUAL    &kp PIPE       &kp UNDER  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &kp TILDE
-&trans       &kp AMPS    &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &kp BSLH       &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
-                                    &trans                &trans                 &trans       &kp LG(SPACE)  &trans     &trans
+&kp LG(TAB)    &kp EXCL    &kp AT     &kp HASH              &kp DLLR               &kp PRCNT    &kp GRAVE      &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&kp LC(TAB)    &kp DOLLAR  &kp PRCNT  &kp CARET             &kp PLUS               &kp EQUAL    &kp PIPE       &kp UNDER  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans  &kp TILDE
+&kp LG(TILDE)  &kp AMPS    &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans       &kp BSLH       &kp MINUS  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans  &trans
+                                      &trans                &trans                 &trans       &kp LG(SPACE)  &trans     &trans
             >;
         };
 
         raise_layer {
             bindings = <
-&kp CAPSLOCK  &trans  &trans        &kp N7        &kp N8        &kp NUMBER_9    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &mmv MOVE_UP    &mmv MOVE_DOWN
-&kp LCTRL     &trans  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &mmv MOVE_LEFT  &mmv MOVE_RIGHT
-&trans        &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp LA(LEFT)  &trans     &trans     &kp LA(RIGHT)  &mkp LCLK       &mkp RCLK
-                                    &trans        &trans        &trans          &trans        &trans     &trans
+&trans  &trans  &trans        &kp N7        &kp N8        &kp NUMBER_9    &kp HOME      &kp PG_DN  &kp PG_UP  &kp END        &mmv MOVE_UP    &mmv MOVE_DOWN
+&trans  &trans  &trans        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT      &mmv MOVE_LEFT  &mmv MOVE_RIGHT
+&trans  &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp LA(LEFT)  &trans     &trans     &kp LA(RIGHT)  &mkp LCLK       &mkp RCLK
+                              &trans        &trans        &trans          &trans        &trans     &trans
             >;
         };
 
