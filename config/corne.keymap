@@ -100,10 +100,10 @@
 
         adjust_layer {
             bindings = <
-&trans  &trans  &kp C_PP    &kp VOL_UP  &kp C_STOP  &trans    &bt BT_CLR  &trans   &trans   &trans   &trans   &trans
-&trans  &trans  &kp C_PREV  &kp VOL_DN  &kp C_NEXT  &trans    &bt BT0     &bt BT1  &bt BT2  &bt BT3  &bt BT4  &trans
-&trans  &trans  &trans      &kp C_MUTE  &trans      &trans    &trans      &trans   &trans   &trans   &trans   &td_lock
-                            &trans      &trans      &trans    &trans      &trans   &trans
+&trans  &trans  &kp C_MUTE  &kp C_VOL_DN      &kp C_VOL_UP  &trans    &bt BT_CLR  &trans   &trans   &trans   &trans   &trans
+&trans  &trans  &kp C_PREV  &kp C_PLAY_PAUSE  &kp C_NEXT    &trans    &bt BT0     &bt BT1  &bt BT2  &bt BT3  &bt BT4  &trans
+&trans  &trans  &trans      &trans            &trans        &trans    &trans      &trans   &trans   &trans   &trans   &trans
+                            &trans            &trans        &trans    &trans      &trans   &trans
             >;
         };
     };
