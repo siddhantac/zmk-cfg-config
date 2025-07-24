@@ -81,10 +81,10 @@
 
         lower_layer {
             bindings = <
-&kp ESCAPE      &none  &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &kp LA(LEFT_ARROW)  &kp LA(RIGHT)    &kp LC(TAB)    &kp LC(LS(TAB))  &none  &kp DELETE
-&kp RCTRL       &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT            &kp DOWN         &kp UP_ARROW   &kp RIGHT        &none  &kp ENTER
-&kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp C_VOL_DN        &kp C_VOLUME_UP  &kp K_MUTE     &none            &none  &none
-                                     &kp LEFT_GUI  &trans        &kp SPACE        &kp LG(SPACE)       &mo 2            &kp RIGHT_ALT
+&kp ESCAPE      &none  &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &kp LA(LEFT_ARROW)      &kp LA(RIGHT)    &kp LC(TAB)    &kp LC(LS(TAB))  &none  &kp DELETE
+&kp RCTRL       &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT                &kp DOWN         &kp UP_ARROW   &kp RIGHT        &none  &kp ENTER
+&kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp C_VOL_DN            &kp C_VOLUME_UP  &kp K_MUTE     &none            &none  &none
+                                     &kp LEFT_GUI  &trans        &kp SPACE        &mt LEFT_GUI LG(SPACE)  &mo 2            &kp RIGHT_ALT
             >;
         };
 
