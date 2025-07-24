@@ -81,19 +81,19 @@
 
         lower_layer {
             bindings = <
-&kp ESCAPE      &none  &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &none          &kp LC(TAB)      &kp LC(LS(TAB))  &none      &none  &kp DELETE
-&kp RCTRL       &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT       &kp DOWN         &kp UP_ARROW     &kp RIGHT  &none  &kp ENTER
-&kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp C_VOL_DN   &kp C_VOLUME_UP  &kp K_MUTE       &none      &none  &none
-                                     &kp LEFT_GUI  &none         &kp SPACE        &kp LG(SPACE)  &mo 2            &kp RIGHT_ALT
+&kp ESCAPE      &none  &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &kp LA(LEFT_ARROW)  &kp LA(RIGHT)    &kp LC(TAB)    &kp LC(LS(TAB))  &none  &kp DELETE
+&kp RCTRL       &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT            &kp DOWN         &kp UP_ARROW   &kp RIGHT        &none  &kp ENTER
+&kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp C_VOL_DN        &kp C_VOLUME_UP  &kp K_MUTE     &none            &none  &none
+                                     &kp LEFT_GUI  &trans        &kp SPACE        &kp LG(SPACE)       &mo 2            &kp RIGHT_ALT
             >;
         };
 
         raise_layer {
             bindings = <
-&kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN     &kp HASH              &kp LS(DOLLAR)    &kp PERCENT     &kp CARET           &kp AMPERSAND      &kp ASTERISK           &kp PLUS         &kp EQUAL      &kp MINUS
-&kp LCTRL       &none            &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp SQT         &kp DOUBLE_QUOTES   &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp BACKSLASH  &kp ENTER
-&kp LEFT_SHIFT  &none            &none           &kp NUMBER_1          &kp NUMBER_2      &kp NUMBER_3    &kp LA(UNDERSCORE)  &none              &none                  &none            &none          &kp RIGHT_SHIFT
-                                                 &kp LEFT_GUI          &none             &kp SPACE       &kp SPACE           &none              &kp RIGHT_ALT
+&kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN     &kp HASH              &kp DOLLAR        &kp PERCENT    &kp CARET          &kp AMPERSAND      &kp ASTERISK           &kp PLUS         &kp EQUAL      &kp MINUS
+&kp LCTRL       &none            &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp SQT        &kp DOUBLE_QUOTES  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp BACKSLASH  &kp ENTER
+&kp LEFT_SHIFT  &none            &none           &none                 &none             &none          &kp UNDERSCORE     &none              &none                  &none            &none          &kp RIGHT_SHIFT
+                                                 &kp LEFT_GUI          &trans            &kp SPACE      &kp SPACE          &trans             &kp RIGHT_ALT
             >;
         };
 
