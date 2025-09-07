@@ -77,6 +77,8 @@
 &kp LSHFT                &kp Z  &kp X  &kp C     &kp V      &kp B        &kp N      &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                                        &kp LGUI  &mo LOWER  &kp SPACE    &kp ENTER  &mo 2  &kp RIGHT_ALT
             >;
+
+            label = "default";
         };
 
         lower {
@@ -86,6 +88,8 @@
 &kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp LA(DOWN_ARROW)      &kp LA(UP_ARROW)  &none            &none        &none      &none
                                      &kp LEFT_GUI  &trans        &kp SPACE        &mt LEFT_GUI LG(SPACE)  &mo 2             &kp RIGHT_ALT
             >;
+
+            label = "symbols";
         };
 
         raise {
@@ -95,6 +99,8 @@
 &kp LEFT_SHIFT  &none            &none           &none                 &none             &none          &kp UNDERSCORE     &none              &none                  &none            &none          &kp RIGHT_SHIFT
                                                  &kp LEFT_GUI          &trans            &kp SPACE      &kp SPACE          &trans             &kp RIGHT_ALT
             >;
+
+            label = "numbers";
         };
 
         adjust {
@@ -104,6 +110,8 @@
 &none  &kp LS(LG(NUMBER_3))  &none       &none         &none             &none         &none       &none    &none                 &none                 &none    &none
                                          &none         &trans            &none         &none       &trans   &none
             >;
+
+            label = "misc";
         };
     };
 };
