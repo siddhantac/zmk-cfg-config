@@ -89,7 +89,7 @@
                                      &kp LEFT_GUI  &trans        &kp SPACE        &mt LEFT_GUI LG(SPACE)  &mo 2             &kp RIGHT_ALT
             >;
 
-            label = "symbols";
+            label = "numbers";
         };
 
         raise {
@@ -100,7 +100,7 @@
                                                  &kp LEFT_GUI          &trans            &kp SPACE      &kp SPACE          &trans             &kp RIGHT_ALT
             >;
 
-            label = "numbers";
+            label = "symbols";
         };
 
         adjust {
