@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: nice-view #new entry
       remote: siddhantac #new entry
-      revision: arasaka #new entry
+      revision: main #new entry
   self:
     path: config
