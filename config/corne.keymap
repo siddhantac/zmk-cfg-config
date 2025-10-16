@@ -99,6 +99,26 @@
             bindings = <&kp GREATER_THAN>;
             key-positions = <9 8>;
         };
+
+        left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <28 27>;
+        };
+
+        right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <31 32>;
+        };
+
+        backtick {
+            bindings = <&kp GRAVE>;
+            key-positions = <14 15>;
+        };
+
+        backslash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <21 20>;
+        };
     };
 
     keymap {
