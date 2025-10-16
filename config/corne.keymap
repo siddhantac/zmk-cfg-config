@@ -130,10 +130,10 @@
 
         system {
             bindings = <
-&none  &none  &none  &none  &none  &none    &tog 4  &none  &none  &none  &none  &bootloader
-&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none
-                     &none  &none  &none    &none   &none  &none
+&bootloader  &none  &none  &none  &none  &none    &tog 4  &none  &none  &none  &none  &bootloader
+&none        &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none
+&none        &none  &none  &none  &none  &none    &none   &none  &none  &none  &none  &none
+                           &none  &none  &none    &none   &none  &none
             >;
         };
     };
