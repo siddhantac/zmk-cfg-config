@@ -4,7 +4,11 @@ Edit here: [keymap-editor](https://nickcoutsos.github.io/keymap-editor/)
 
 Generate image here: [keymap-drawer](https://keymap-drawer.streamlit.app/)
 
+- paste this URL
+
+```
 https://github.com/siddhantac/zmk-cfg-config/blob/main/config/corne.keymap
+```
 
 ## Keymap
 
