@@ -84,10 +84,10 @@
 
         lower {
             bindings = <
-&kp ESCAPE      &none  &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &kp LA(LEFT_ARROW)      &kp LA(RIGHT)     &kp LC(LS(TAB))  &kp LC(TAB)  &none      &kp DELETE
-&kp RCTRL       &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT                &kp DOWN          &kp UP_ARROW     &kp RIGHT    &kp COLON  &kp MINUS
-&kp LEFT_SHIFT  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp LA(DOWN_ARROW)      &kp LA(UP_ARROW)  &kp EQUAL        &kp PERIOD   &kp FSLH   &kp ASTERISK
-                                     &kp N8        &trans        &kp SPACE        &mt LEFT_GUI LG(SPACE)  &mo 2             &kp RIGHT_ALT
+&kp ESCAPE      &none      &kp N7        &kp N8        &kp N9        &kp PAGE_UP      &kp LA(LEFT_ARROW)      &kp LA(DOWN_ARROW)  &kp LA(UP_ARROW)  &kp LA(RIGHT)  &kp HOME  &kp DELETE
+&kp RCTRL       &none      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PAGE_DOWN    &kp LEFT                &kp DOWN            &kp UP_ARROW      &kp RIGHT      &kp END   &kp MINUS
+&kp LEFT_SHIFT  &kp COLON  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0           &kp LC(LEFT)            &kp LC(DOWN)        &kp LC(UP_ARROW)  &kp LC(RIGHT)  &kp FSLH  &kp ASTERISK
+                                         &kp N8        &trans        &kp SPACE        &mt LEFT_GUI LG(SPACE)  &mo 2               &kp RIGHT_ALT
             >;
 
             label = "numbers";
