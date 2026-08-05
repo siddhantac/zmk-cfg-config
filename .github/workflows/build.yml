@@ -3,3 +3,27 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
+
+  # The version on the left half's display is hardcoded in corne.conf, because
+  # the reusable build workflow above takes no input that could carry a version
+  # and a job with `uses:` cannot also have `steps:` to derive one. That leaves
+  # the string and the git tag free to drift, which is worse than showing no
+  # version at all -- a wrong version is one you would still trust. So on a tag
+  # push, fail loudly unless they agree.
+  verify-version:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Version string must match the tag
+        run: |
+          conf=$(sed -n 's/^CONFIG_NICE_VIEW_FIRMWARE_VERSION="\(.*\)"$/\1/p' config/corne.conf)
+          if [ -z "$conf" ]; then
+            echo "::error::CONFIG_NICE_VIEW_FIRMWARE_VERSION not found in config/corne.conf"
+            exit 1
+          fi
+          if [ "$conf" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::tag is '$GITHUB_REF_NAME' but corne.conf says '$conf'"
+            exit 1
+          fi
+          echo "version string matches tag: $conf"
