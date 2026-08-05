@@ -11,6 +11,9 @@ manifest:
       import: app/west.yml
     - name: nice-view #new entry
       remote: siddhantac #new entry
-      revision: remove-wpm #new entry
+      # nice-view v1.0. Pinned by commit rather than by tag: a tag can be moved
+      # later, and this must resolve to one exact tree so that v7.0 here always
+      # means one exact firmware image.
+      revision: 71a431121e4dacad2f50b8dcf692c2654fc7fa4e #new entry
   self:
     path: config
